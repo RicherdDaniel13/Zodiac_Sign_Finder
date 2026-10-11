@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101126">
+  <title>Cosmic — Zodiac Sign Finder</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">✦ COSMIC DISCOVERY ✦</div>
+      <div class="hero-symbol" aria-hidden="true">☾</div>
+      <h1>Discover Your <span>Zodiac</span> Sign</h1>
+      <p class="subtitle">
+        Enter your birthday and uncover your cosmic identity.
+      </p>
+    </header>
+
+    <section class="card">
+      <form id="zodiacForm" novalidate>
+        <label class="section-label">✧ YOUR DATE OF BIRTH</label>
+
+        <div class="date-fields">
+          <div class="field">
+            <label for="day">Day</label>
+            <select id="day" required>
+              <option value="">Day</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="month">Month</label>
+            <select id="month" required>
+              <option value="">Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="year">Year</label>
+            <input
+              id="year"
+              type="number"
+              inputmode="numeric"
+              placeholder="YYYY"
+              min="1900"
+              required
+            >
+          </div>
+        </div>
+
+        <p class="help">
+          Choose your day and month, then type your birth year.
+          No calendar scrolling needed.
+        </p>
+
+        <button class="primary-btn" type="submit">
+          ✨ Reveal My Zodiac Sign
+        </button>
+
+        <p id="error" class="error" role="alert"></p>
+      </form>
+
+      <section id="result" class="result"
+               aria-live="polite" aria-atomic="true" hidden>
+        <p class="result-caption">YOUR COSMIC IDENTITY</p>
+        <div id="resultSymbol" class="result-symbol"></div>
+        <h2 id="resultName" class="result-name"></h2>
+        <p id="resultDates" class="result-dates"></p>
+
+        <div class="divider"></div>
+
+        <div id="resultElement" class="element"></div>
+        <h3 class="traits-heading">YOUR PERSONALITY TRAITS</h3>
+        <p id="resultTraits" class="traits"></p>
+        <p id="resultDescription" class="description"></p>
+
+        <button id="resetButton" class="reset-btn" type="button">
+          ↻ Try Another Birthday
+        </button>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <p>Made for curious minds ✦</p>
+      <p>
+        Astrology descriptions are for entertainment and are
+        not scientific assessments.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
